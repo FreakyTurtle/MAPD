@@ -1,0 +1,32 @@
+{
+    "version": "0.0.1",
+    "title": "Service Path Definition",
+    "type": "object",
+    "required": ["version", "paths", "endpoints", "objects", "services", "events"],
+    "properties": {
+        "version": {
+            "type": "string",
+            "description": "The version of MAPD schema to reference"
+        },
+        "paths": {
+            "type": "object",
+            "description": "The definition of the pathway for a particular action"
+        },
+        "endpoints": {
+            "type": "object",
+            "description": "The definition of the endpoints within microservices"
+        },
+        "objects": {
+            "type": "object",
+            "description": "The definition of objects that endpoints are to return/receive"
+        },
+        "services": {
+            "type": "object",
+            "description": "The definition of the services that contain the endpoints used in the pathways"
+        },
+        "events": {
+            "type": "object",
+            "description": "The definition of events that are triggered in pathways"
+        }
+    }
+}

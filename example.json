@@ -1,0 +1,36 @@
+{   
+    "version": "0.0.1",
+    "paths": {
+        "style/generate": [
+            "endpoint1", "endpoint2"
+        ]
+    },
+    "endpoints": {
+        
+    },
+    "objects": {
+        "user": {
+            "title": "User",
+            "description": "An object defining a user",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "The unique identifier for a user",
+                    "type": "integer"
+                },
+                "firstname": {
+                    "type": "string",
+                    "description": "The first name of the user"
+                },
+                "lastname": {
+                    "type": "string",
+                    "description": "The last name of the user"
+                },
+                "email": {
+                    "type": "string",
+                    "description":
+                }
+            }
+        }
+    }
+}
