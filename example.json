@@ -6,14 +6,21 @@
         ]
     },
     "endpoints": {
-        
+        "addUser": {
+            "title": "AddUser",
+            "method": "POST",
+            "description":  "The endpoint to add a user",
+            "service": "userService"
+        }
     },
     "objects": {
         "user": {
             "title": "User",
             "description": "An object defining a user",
             "type": "object",
-            "properties": {
+            "requestRequired": ["firstname", "lastname", "email"],
+            "responseRequired": ["id", "firstname", "lastname", "email"],
+            "props": {
                 "id": {
                     "description": "The unique identifier for a user",
                     "type": "integer"
@@ -31,6 +38,11 @@
                     "description":
                 }
             }
+        }
+    },
+    "services": {
+        "userService": {
+            
         }
     }
 }

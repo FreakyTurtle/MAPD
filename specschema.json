@@ -17,8 +17,37 @@
             "description": "The definition of the endpoints within microservices"
         },
         "objects": {
-            "type": "object",
-            "description": "The definition of objects that endpoints are to return/receive"
+            "type": "array",
+            "description": "The definition of objects that endpoints are to return/receive",
+            "items": {
+                "type": "object",
+                "description": "A Defined object for re-use",
+                "properties": {
+                    "type": "string",
+                    "description" : ["string", "null"],
+                    "requestRequired": {
+                        "type": "array",
+                        "description": "The parameters that are required as part of a request",
+                        "items": {
+                            "type": "string",
+                            "description": "The keys of the parameters"
+                        }
+                    },
+                    "responseRequired": {
+                        "type": "array",
+                        "description": "The parameters that are required as part of a response",
+                        "items": {
+                            "type": "string",
+                            "description": "The keys of the parameters"
+                        }
+                    },
+                    "props": {
+                        "type": "object",
+                        "description": "The properties of a described json object",
+                        "additionalProperties": { "$ref": "#/definitions/objectprop" }
+                    }
+                }
+            }
         },
         "services": {
             "type": "object",
@@ -27,6 +56,17 @@
         "events": {
             "type": "object",
             "description": "The definition of events that are triggered in pathways"
+        }
+    },
+    "definitions": {
+        "objectprop": {
+            "type": "object",
+            "required": ["type"],
+            "properties": {
+                "type": ["integer", "number", "object", "array", "boolean", "string", "null"],
+                "description": "string",
+                
+            }  
         }
     }
 }
